@@ -109,7 +109,11 @@
 
     <script>
         const btn = document.querySelector(".btn");
-        btn.addEventListener("click", () => { });
+        btn.addEventListener("transitionend", (e) => {
+            console.log("動畫播放結束");
+            console.log("動畫控制的屬性: " + e.propertyName);
+
+        });
 
     </script>
 </body>
