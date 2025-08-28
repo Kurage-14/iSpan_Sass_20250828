@@ -101,7 +101,7 @@
 </head>
 
 <body>
-    <div class="btn">
+    <div class="btn" data-hover="我有冰淇淋">
         <div class="bg"></div>
         <div class="text">按鈕</div>
     </div>
@@ -116,7 +116,9 @@
         btn.addEventListener("mouseenter", () => {
             x = btn.offsetLeft;
             y = btn.offsetTop - 50;
+            // playing: 給 bg transitionend 判斷要不要做動作用的
             bg.classList.add("playing");
+            info.textContent = btn.dataset.hover;
         });
 
         btn.addEventListener("mouseleave", () => {
@@ -155,6 +157,9 @@
 
         info.addEventListener("transitionend", (e) => {
             // 移回左邊看不見的地方
+            // info.textContent = "";
+            // info.style.left = -1000 + "px";
+            // info.style.top = `${-1000}px`;
         });
     </script>
 </body>
