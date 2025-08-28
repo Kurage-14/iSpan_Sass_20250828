@@ -44,7 +44,11 @@
     <script>
         const box = document.querySelector(".box");
 
-        box.classList.add("active");
+        // 下一個瀏覽器的空白時間, 下一個效能足夠的時間
+        requestIdleCallback(() => {
+            box.classList.add("active");
+        });
+
     </script>
 </body>
 
