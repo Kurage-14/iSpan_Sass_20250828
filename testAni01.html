@@ -15,6 +15,7 @@
         }
 
         .box.active {
+            /* 把動畫的播放控制外移到這個樣式 */
             animation-name: ani01;
             animation-duration: 2s;
             animation-iteration-count: infinite;
@@ -39,6 +40,12 @@
 
 <body>
     <div class="box"></div>
+
+    <script>
+        const box = document.querySelector(".box");
+
+        box.classList.add("active");
+    </script>
 </body>
 
 </html>
