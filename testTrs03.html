@@ -110,10 +110,12 @@
     <script>
         const btn = document.querySelector(".btn");
         btn.addEventListener("transitionend", (e) => {
-            console.log("動畫播放結束");
-            console.log("動畫控制的屬性: " + e.propertyName);
-            console.log(e.target);
 
+            if (e.propertyName == "width" && e.target.className == "bg") {
+                console.log("動畫播放結束");
+                console.log("動畫控制的屬性: " + e.propertyName);
+                console.log(e.target);
+            }
 
         });
 
