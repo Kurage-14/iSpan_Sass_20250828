@@ -36,10 +36,21 @@
         ];
         const options = {
             duration: 2000,
-            iterations: Infinity
+            iterations: 1
         };
         const ani1 = box[0].animate(keyframs, options);
-        ani1.addEventListener();
+        ani1.addEventListener("finish", () => {
+            console.log("完了完了");
+        });
+        ani1.addEventListener("finish", () => {
+            console.log("巴比Q了");
+        });
+        // ani1.onfinish = () => {
+        //     console.log("完了完了");
+        // }
+        // ani1.onfinish = () => {
+        //     console.log("巴比Q了");
+        // }
     </script>
 </body>
 
