@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .box {
+            position: relative;
+            /* left: calc(100% - 100px); */
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #08a7eb;
+        }
+    </style>
+    <title>WAAPI 03</title>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+        const box = document.querySelectorAll(".box");
+        const keyframs = [
+            {
+                left: 0
+            },
+            {
+                left: "calc(100% - 100px)"
+            },
+            {
+                left: 0
+            },
+        ];
+        const options = {
+            duration: 2000,
+            iterations: Infinity
+        };
+        const ani1 = box[0].animate(keyframs, options);
+        ani1.addEventListener();
+    </script>
+</body>
+
+</html>
