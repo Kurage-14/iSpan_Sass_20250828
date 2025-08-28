@@ -23,6 +23,7 @@
     <button>播放</button>
     <button>兩倍速</button>
     <button>原速</button>
+    <button>倒轉</button>
 
     <script>
         const box = document.querySelector(".box");
@@ -58,6 +59,9 @@
         });
         btns[3].addEventListener("click", () => {
             ani1.playbackRate = 1;
+        });
+        btns[4].addEventListener("click", () => {
+            ani1.reverse();
         });
     </script>
 </body>
