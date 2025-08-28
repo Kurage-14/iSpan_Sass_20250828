@@ -22,8 +22,23 @@
 
     <script>
         const box = document.querySelector(".box");
-        const keyframs = [];
-        const options = {};
+        // 像CSS的keyframs但不能指定百分比
+        const keyframs = [
+            {
+                left: 0
+            },
+            {
+                left: "calc(100% - 100px)"
+            },
+            {
+                left: 0
+            },
+        ];
+        // 就像 CSS 的animation-duration 和animation-iteration-count
+        const options = {
+            duration: 2000,
+            iterations: Infinity
+        };
         box.animate(keyframs, options);
     </script>
 </body>
