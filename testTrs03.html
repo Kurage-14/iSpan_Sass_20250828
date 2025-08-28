@@ -112,7 +112,9 @@
         const info = document.querySelector(".info");
 
         btn.addEventListener("mouseenter", () => {
-            info
+            console.log(btn.offsetLeft, btn.offsetTop);
+            info.style.left = btn.offsetLeft + "px";
+            info.style.top = `${btn.offsetTop}px`;
         });
 
         btn.addEventListener("transitionend", (e) => {
