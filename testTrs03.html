@@ -109,12 +109,14 @@
 
     <script>
         const btn = document.querySelector(".btn");
+        const bg = document.querySelector(".bg");
         const info = document.querySelector(".info");
+        let x, y;
 
         btn.addEventListener("mouseenter", () => {
             console.log(btn.offsetLeft, btn.offsetTop);
-            info.style.left = btn.offsetLeft + "px";
-            info.style.top = `${btn.offsetTop}px`;
+            x = btn.offsetLeft;
+            y = btn.offsetTop - 50;
         });
 
         btn.addEventListener("transitionend", (e) => {
@@ -134,6 +136,10 @@
 
         });
 
+        bg.addEventListener("transitionstart", (e) => {
+            info.style.left = x + "px";
+            info.style.top = `${y}px`;
+        })
     </script>
 </body>
 
