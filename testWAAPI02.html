@@ -42,9 +42,13 @@
                 left: 0
             },
         ];
+        // easing
+        // linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(), steps()
+        // https://cubic-bezier.com/#.17,.67,.83,.67
         const options = {
             duration: 2000,
-            iterations: Infinity
+            iterations: Infinity,
+            easing: "cubic-bezier(.41,-0.64,.59,1.95)"
         };
         const ani1 = box.animate(keyframs, options); // 把動畫的執行放在一個變數中, 才能之後進行控制
 
