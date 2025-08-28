@@ -33,6 +33,16 @@
         });
 
 
+        document.addEventListener("click", () => {
+            console.log("QQ");
+            gsap.to(".box", {
+                x: "-=100",
+                y: "+=100",
+                rotation: "+=1800",
+                duration: 1
+            });
+        })
+
     </script>
 </body>
 
