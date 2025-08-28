@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .box {
+            position: relative;
+            /* left: calc(100% - 100px); */
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #08a7eb;
+        }
+    </style>
+    <title>WAAPI 01</title>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button id="btn1">暫停</button>
+    <button>播放</button>
+    <button>兩倍速</button>
+    <button>原速</button>
+
+    <script>
+        const box = document.querySelector(".box");
+        const btns = document.querySelectorAll("button");
+        const btn1 = document.querySelector("#btn1"); // 也可以用ID抓
+        console.log(btn1 == btns[0]); // 抓到的是相同的
+
+        btns[0].addEventListener("click", () => { });
+        btns[1].addEventListener("click", () => { });
+        btns[2].addEventListener("click", () => { });
+        btns[3].addEventListener("click", () => { });
+
+
+
+
+        const keyframs = [
+            {
+                left: 0
+            },
+            {
+                left: "calc(100% - 100px)"
+            },
+            {
+                left: 0
+            },
+        ];
+        const options = {
+            duration: 2000,
+            iterations: Infinity
+        };
+        box.animate(keyframs, options);
+    </script>
+</body>
+
+</html>
