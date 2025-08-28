@@ -45,14 +45,20 @@
             duration: 2000,
             iterations: Infinity
         };
-        const ani1 = box.animate(keyframs, options);
+        const ani1 = box.animate(keyframs, options); // 把動畫的執行放在一個變數中, 才能之後進行控制
 
         btns[0].addEventListener("click", () => {
-            ani1.pause();
+            ani1.pause(); // 暫停
         });
-        btns[1].addEventListener("click", () => { });
-        btns[2].addEventListener("click", () => { });
-        btns[3].addEventListener("click", () => { });
+        btns[1].addEventListener("click", () => {
+            ani1.play();
+        });
+        btns[2].addEventListener("click", () => {
+            ani1.playbackRate = 2;
+        });
+        btns[3].addEventListener("click", () => {
+            ani1.playbackRate = 1;
+        });
     </script>
 </body>
 
