@@ -40,11 +40,19 @@
         };
         const ani1 = box[0].animate(keyframs, options);
         ani1.addEventListener("finish", () => {
-            console.log("完了完了");
+            box[1].animate(keyframs, options);
         });
-        ani1.addEventListener("finish", () => {
-            console.log("巴比Q了");
-        });
+
+
+        // 事件附加
+        // ani1.addEventListener("finish", () => {
+        //     console.log("完了完了");
+        // });
+        // ani1.addEventListener("finish", () => {
+        //     console.log("巴比Q了");
+        // });
+
+        // 事件覆蓋
         // ani1.onfinish = () => {
         //     console.log("完了完了");
         // }
