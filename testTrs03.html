@@ -110,7 +110,14 @@
     <script>
         const btn = document.querySelector(".btn");
         btn.addEventListener("transitionend", (e) => {
+            // matches: 判斷元素是否含有某個選擇器
+            console.log(e.target.matches(":hover"));
+            if (e.target.matches(":hover")) {
+                console.log("滑鼠移入");
 
+            } else {
+                console.log("滑鼠移出");
+            }
             if (e.propertyName == "width" && e.target.className == "bg") {
                 console.log("動畫播放結束");
                 console.log("動畫控制的屬性: " + e.propertyName);
