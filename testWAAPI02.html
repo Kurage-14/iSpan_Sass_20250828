@@ -30,14 +30,6 @@
         const btn1 = document.querySelector("#btn1"); // 也可以用ID抓
         console.log(btn1 == btns[0]); // 抓到的是相同的
 
-        btns[0].addEventListener("click", () => { });
-        btns[1].addEventListener("click", () => { });
-        btns[2].addEventListener("click", () => { });
-        btns[3].addEventListener("click", () => { });
-
-
-
-
         const keyframs = [
             {
                 left: 0
@@ -53,7 +45,14 @@
             duration: 2000,
             iterations: Infinity
         };
-        box.animate(keyframs, options);
+        const ani1 = box.animate(keyframs, options);
+
+        btns[0].addEventListener("click", () => {
+            ani1.pause();
+        });
+        btns[1].addEventListener("click", () => { });
+        btns[2].addEventListener("click", () => { });
+        btns[3].addEventListener("click", () => { });
     </script>
 </body>
 
