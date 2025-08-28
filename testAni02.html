@@ -43,11 +43,16 @@
     <div class="box"></div>
 
     <script>
-        const boxs = document.querySelectorAll(".box");
+        const boxs = document.querySelectorAll(".box"); // 抓到所有的 .box
 
         // 下一個瀏覽器的空白時間, 下一個效能足夠的時間
         requestIdleCallback(() => {
             boxs[0].classList.add("active");
+            // 叫第一個 .box 播動畫
+        });
+
+        boxs[0].addEventListener("animationend", (e) => {
+            boxs[1].classList.add("active");
         });
 
     </script>
