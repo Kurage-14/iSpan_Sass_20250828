@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .box {
+            position: relative;
+            /* left: calc(100% - 100px); */
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #08a7eb;
+        }
+
+        .box.active {
+            /* 把動畫的播放控制外移到這個樣式 */
+            animation-name: ani01;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes ani01 {
+            0% {
+                left: 0;
+            }
+
+            50% {
+                left: calc(100% - 100px);
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+    </style>
+    <title>CSS Animation 01</title>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+        const boxs = document.querySelectorAll(".box"); // 抓到所有的 .box
+        let count = 0;
+
+        // 下一個瀏覽器的空白時間, 下一個效能足夠的時間
+        requestIdleCallback(() => {
+            boxs[0].classList.add("active");
+            // 叫第一個 .box 播動畫
+        });
+
+        // 動畫播放完的事件
+        boxs[0].addEventListener("animationiteration", (e) => {
+            // boxs[1].classList.add("active"); // 叫第2個 .box 播動畫
+            count++;
+            console.log(count);
+
+        });
+
+    </script>
+</body>
+
+</html>
