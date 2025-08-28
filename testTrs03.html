@@ -65,7 +65,7 @@
             padding: 5px;
             background-color: #f77070;
             border-radius: 5px;
-            opacity: 1;
+            opacity: 0;
             transform: translateY(-14px);
             transition: opacity .2s 0.3s, transform .2s;
             pointer-events: none;
@@ -74,7 +74,7 @@
             &::after {
                 position: absolute;
                 left: 5px;
-                bottom: 0;
+                bottom: -2px;
                 z-index: -1;
                 content: "";
                 width: 0;
@@ -114,7 +114,6 @@
         let x, y;
 
         btn.addEventListener("mouseenter", () => {
-            console.log(btn.offsetLeft, btn.offsetTop);
             x = btn.offsetLeft;
             y = btn.offsetTop - 50;
         });
@@ -139,6 +138,7 @@
         bg.addEventListener("transitionstart", (e) => {
             info.style.left = x + "px";
             info.style.top = `${y}px`;
+            info.classList.add("active");
         })
     </script>
 </body>
