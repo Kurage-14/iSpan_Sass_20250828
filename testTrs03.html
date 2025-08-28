@@ -139,7 +139,15 @@
             info.style.left = x + "px";
             info.style.top = `${y}px`;
             info.classList.add("active");
-        })
+        });
+
+        bg.addEventListener("transitionend", (e) => {
+            console.log("動畫控制的屬性: " + e.propertyName);
+        });
+
+        info.addEventListener("transitionend", (e) => {
+            console.log("動畫控制的屬性: " + e.propertyName);
+        });
     </script>
 </body>
 
