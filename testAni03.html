@@ -53,11 +53,12 @@
         });
 
         // 動畫播放完的事件
-        boxs[0].addEventListener("animationiteration", (e) => {
-            // boxs[1].classList.add("active"); // 叫第2個 .box 播動畫
+        boxs[0].addEventListener("animationiteration", _a = (e) => {
             count++;
             console.log(count);
-
+            if (count == 3) {
+                boxs[1].classList.add("active"); // 叫第2個 .box 播動畫
+            }
         });
 
     </script>
