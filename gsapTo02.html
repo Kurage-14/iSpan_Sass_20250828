@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .box {
+            position: relative;
+            /* left: calc(100% - 100px); */
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #08a7eb;
+        }
+    </style>
+    <title>gsap.to()</title>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script>
+        const box = document.querySelector(".box");
+        const rightEdge = window.innerWidth - box.offsetWidth - 16;
+
+        requestIdleCallback(() => {
+            gsap.to(".box", {
+                x: rightEdge,
+                duration: 1
+            });
+        });
+
+    </script>
+</body>
+
+</html>
