@@ -118,7 +118,7 @@
             y = btn.offsetTop - 50;
             // playing: 給 bg transitionend 判斷要不要做動作用的
             bg.classList.add("playing");
-            info.textContent = btn.dataset.hover;
+            info.textContent = btn.dataset.hover; // 取用 btn 中的 data-hover
         });
 
         btn.addEventListener("mouseleave", () => {
@@ -157,9 +157,11 @@
 
         info.addEventListener("transitionend", (e) => {
             // 移回左邊看不見的地方
-            // info.textContent = "";
-            // info.style.left = -1000 + "px";
-            // info.style.top = `${-1000}px`;
+            if (!info.matches(".active")) {
+                info.textContent = "";
+                info.style.left = -1000 + "px";
+                info.style.top = `${-1000}px`;
+            }
         });
     </script>
 </body>
