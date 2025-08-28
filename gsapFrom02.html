@@ -32,11 +32,20 @@
         //     duration: 1
         // });
 
+        const centerX = window.innerWidth / 2 - 50;
+        const centerY = window.innerHeight / 2 - 50;
+
         document.addEventListener("click", (e) => {
             // 在記憶體中建立 div, 加到 body 裡
             const box = document.createElement("div");
             box.classList.add("box");
             document.body.append(box);
+
+            gsap.from(box, {
+                x: e.pageX - centerX,
+                y: e.pageY - centerY,
+                duration: 1
+            });
         });
     </script>
 </body>
